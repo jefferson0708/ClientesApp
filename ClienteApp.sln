@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CientesApp.Infra.Data.SqlServer.Tests", "CientesApp.Infra.Data.SqlServer.Tests\CientesApp.Infra.Data.SqlServer.Tests.csproj", "{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientesApp.Infra.Data.SqlServer.Tests", "CientesApp.Infra.Data.SqlServer.Tests\ClientesApp.Infra.Data.SqlServer.Tests.csproj", "{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -62,7 +62,7 @@ jobs:
 
 
       - name: Run tests with dotnet
-        run: dotnet test CientesApp.Infra.Data.SqlServer.Tests/CientesApp.Infra.Data.SqlServer.Tests.csproj --configuration Release
+        run: dotnet test ClientesApp.Infra.Data.SqlServer.Tests/ClientesApp.Infra.Data.SqlServer.Tests.csproj --configuration Release
 
   deploy:
     runs-on: windows-latest
