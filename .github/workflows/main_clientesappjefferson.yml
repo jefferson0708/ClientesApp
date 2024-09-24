@@ -29,7 +29,7 @@ jobs:
 
 
       - name: Build test project
-        run: dotnet build ClientesApp.Infra.Data.SqlServer.Tests/ClientesApp.Infra.Data.SqlServer.Tests.csproj --configuration Release
+        run: dotnet build ./ClientesApp.Infra.Data.SqlServer.Tests/ClientesApp.Infra.Data.SqlServer.Tests.csproj --configuration Release
 
 
       - name: dotnet publish
