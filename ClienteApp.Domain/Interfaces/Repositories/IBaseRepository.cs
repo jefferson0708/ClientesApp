@@ -12,7 +12,7 @@ namespace ClienteApp.Domain.Interfaces.Repositories
         Task AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);
         Task DeleteAsync(TEntity entity);
-        Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity,bool>> predicate);
+        Task<List<TEntity>> GetManyAsync(Expression<Func<TEntity,bool>> predicate);
         Task<TEntity?> GetOneAsync(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity?> GetByIdAsync(TKey id);
     }

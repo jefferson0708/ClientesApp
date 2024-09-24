@@ -1,4 +1,6 @@
 ﻿using ClienteApp.Domain.Interfaces.Repositories;
+using ClientesApp.Infra.Data.SqlServer.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +12,29 @@ namespace ClientesApp.Infra.Data.SqlServer.Repositories
 {
     public abstract class BaseRepository<TEntity, TKey> : IBaseRepository<TEntity, TKey> where TEntity : class
     {
-        public virtual Task AddAsync(TEntity entity)
+        private readonly DataContext _dataContext;
+
+        public BaseRepository(DataContext dataContext)
         {
-            throw new NotImplementedException();
+            _dataContext = dataContext;
         }
 
-        public virtual Task DeleteAsync(TEntity entity)
+        public virtual async Task AddAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            await _dataContext.AddAsync(entity);
+            await _dataContext.SaveChangesAsync();
+        }
+
+        public virtual async Task UpdateAsync(TEntity entity)
+        {
+            _dataContext.Update(entity);
+            await _dataContext.SaveChangesAsync();
+        }
+
+        public virtual async Task DeleteAsync(TEntity entity)
+        {
+            _dataContext.Remove(entity);  
+            await _dataContext.SaveChangesAsync();
         }
 
         public virtual void Dispose()
@@ -25,24 +42,21 @@ namespace ClientesApp.Infra.Data.SqlServer.Repositories
             throw new NotImplementedException();
         }
 
-        public virtual Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate)
+        public virtual async Task<List<TEntity>> GetManyAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _dataContext.Set<TEntity>().Where(predicate).ToListAsync();
         }
 
-        public virtual Task<TEntity?> GetByIdAsync(TKey id)
+        public virtual async Task<TEntity?> GetByIdAsync(TKey id)
         {
-            throw new NotImplementedException();
+            return await _dataContext.Set<TEntity>().FindAsync(id);
         }
 
-        public virtual Task<TEntity?> GetOneAsync(Expression<Func<TEntity, bool>> predicate)
+        public virtual async Task<TEntity?> GetOneAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _dataContext.Set<TEntity>().Where(predicate).FirstOrDefaultAsync();
         }
 
-        public virtual Task UpdateAsync(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
