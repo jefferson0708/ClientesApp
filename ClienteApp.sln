@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientesApp.Infra.Data.SqlServer.Tests", "ClientesApp.Infra.Data.SqlServer.Tests\ClientesApp.Infra.Data.SqlServer.Tests.csproj", "{0480E171-3527-4DB0-A095-6206271DE372}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientesApp.Infra.Data.SqlServer.Tests", "ClientesApp.Infra.Data.SqlServer.Tests\ClientesApp.Infra.Data.SqlServer.Tests.csproj", "{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,14 +54,10 @@ Global
 		{6037468F-879D-422A-B802-7579110CE727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6037468F-879D-422A-B802-7579110CE727}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6037468F-879D-422A-B802-7579110CE727}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0480E171-3527-4DB0-A095-6206271DE372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0480E171-3527-4DB0-A095-6206271DE372}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0480E171-3527-4DB0-A095-6206271DE372}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0480E171-3527-4DB0-A095-6206271DE372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,8 +68,7 @@ Global
 		{8216F541-1BD4-4092-BD85-D37FE87CAE2A} = {D43153EF-0E62-48CD-8B91-A72A381E37AD}
 		{A1AADC29-B56B-478F-B3E1-4A5238449921} = {F0796841-FA16-44A3-A817-D943B723EF16}
 		{6037468F-879D-422A-B802-7579110CE727} = {F0796841-FA16-44A3-A817-D943B723EF16}
-		{37E1CB7C-A1E6-49E5-A82A-AF05E05CE8CB} = {F0796841-FA16-44A3-A817-D943B723EF16}
-		{0480E171-3527-4DB0-A095-6206271DE372} = {F0796841-FA16-44A3-A817-D943B723EF16}
+		{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C} = {F0796841-FA16-44A3-A817-D943B723EF16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD94D148-172D-46D0-87BC-F44C3CD8A4F1}
