@@ -1,4 +1,6 @@
-﻿using ClientesApp.Infra.Data.SqlServer.Context;
+﻿using ClienteApp.Domain.Interfaces.Repositories;
+using ClientesApp.Infra.Data.SqlServer.Context;
+using ClientesApp.Infra.Data.SqlServer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,8 @@ namespace ClientesApp.Infra.Data.SqlServer.Extensions
         {
             services.AddDbContext<DataContext>(options=> 
             options.UseSqlServer(configuration.GetConnectionString("ClientesApp")));
+
+            services.AddTransient<IClienteRepository, ClienteRepository>();
             return services;
         }
     }

@@ -39,7 +39,7 @@ namespace ClientesApp.Infra.Data.SqlServer.Repositories
 
         public virtual void Dispose()
         {
-            throw new NotImplementedException();
+            _dataContext.Dispose();
         }
 
         public virtual async Task<List<TEntity>> GetManyAsync(Expression<Func<TEntity, bool>> predicate)
@@ -57,6 +57,10 @@ namespace ClientesApp.Infra.Data.SqlServer.Repositories
             return await _dataContext.Set<TEntity>().Where(predicate).FirstOrDefaultAsync();
         }
 
-        
+        public virtual async Task<bool> VerifyExistsAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await _dataContext.Set<TEntity>().AnyAsync(predicate);
+        }
+
     }
 }
