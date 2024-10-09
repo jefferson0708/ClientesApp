@@ -1,4 +1,4 @@
-﻿using ClientesApp.Application.Interfaces;
+﻿using ClientesApp.Application.Interfaces.Applications;
 using ClientesApp.Application.Mappings;
 using ClientesApp.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +17,7 @@ namespace ClientesApp.Application.Extensions
             services.AddAutoMapper(typeof(ClienteProfileMap));
 
             services.AddTransient<IClienteAppService, ClienteAppService>();
+            services.AddMediatR(m=>m.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
             return services;
         }

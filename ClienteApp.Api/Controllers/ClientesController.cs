@@ -1,6 +1,6 @@
 ﻿using Azure.Core;
 using ClientesApp.Application.Dtos;
-using ClientesApp.Application.Interfaces;
+using ClientesApp.Application.Interfaces.Applications;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClienteApp.Api.Controllers
