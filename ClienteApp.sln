@@ -24,11 +24,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{B1E49DE9-668B-43B6-AEE7-74D981C6D7D8}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		ClienteApp.Api\Dockerfile = ClienteApp.Api\Dockerfile
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientesApp.Infra.Data.SqlServer.Tests", "ClientesApp.Infra.Data.SqlServer.Tests\ClientesApp.Infra.Data.SqlServer.Tests.csproj", "{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteAdd.Domain.Tests", "ClienteAdd.Domain.Tests\ClienteAdd.Domain.Tests.csproj", "{2C85D395-986D-4A29-BF9D-DE4D941AAF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClienteAdd.Domain.Tests", "ClienteAdd.Domain.Tests\ClienteAdd.Domain.Tests.csproj", "{2C85D395-986D-4A29-BF9D-DE4D941AAF2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientesApp.Infra.Messages", "ClientesApp.Infra.Messages\ClientesApp.Infra.Messages.csproj", "{B02E1A12-B95F-46B2-A671-76E0C0336287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +67,10 @@ Global
 		{2C85D395-986D-4A29-BF9D-DE4D941AAF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C85D395-986D-4A29-BF9D-DE4D941AAF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C85D395-986D-4A29-BF9D-DE4D941AAF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02E1A12-B95F-46B2-A671-76E0C0336287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02E1A12-B95F-46B2-A671-76E0C0336287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02E1A12-B95F-46B2-A671-76E0C0336287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02E1A12-B95F-46B2-A671-76E0C0336287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +83,7 @@ Global
 		{6037468F-879D-422A-B802-7579110CE727} = {F0796841-FA16-44A3-A817-D943B723EF16}
 		{C32DF7DE-03D1-44C8-8727-CA1CC6D59D7C} = {F0796841-FA16-44A3-A817-D943B723EF16}
 		{2C85D395-986D-4A29-BF9D-DE4D941AAF2A} = {D43153EF-0E62-48CD-8B91-A72A381E37AD}
+		{B02E1A12-B95F-46B2-A671-76E0C0336287} = {F0796841-FA16-44A3-A817-D943B723EF16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD94D148-172D-46D0-87BC-F44C3CD8A4F1}

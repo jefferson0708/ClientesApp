@@ -1,10 +1,12 @@
 ﻿using Azure.Core;
 using ClientesApp.Application.Dtos;
 using ClientesApp.Application.Interfaces.Applications;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClienteApp.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ClientesController : ControllerBase
@@ -49,6 +51,14 @@ namespace ClienteApp.Api.Controllers
         public async Task<IActionResult> GetById(Guid id)
         {
             return StatusCode(200, await _clienteAppService.GetByIdAsync(id));
+        }
+
+        [HttpGet("logs/{id}")]
+        [ProducesResponseType(typeof(LogClienteResponseDto),200)]
+        public async Task<IActionResult> GetLogs(Guid id, [FromQuery] LogClienteRequestDto request)
+        {
+            return StatusCode(200, await _clienteAppService.GetLogs(id, request));
+
         }
     }
 }

@@ -5,6 +5,7 @@ using ClienteApp.Domain.Services;
 using ClientesApp.Application.Commands;
 using ClientesApp.Application.Dtos;
 using ClientesApp.Application.Interfaces.Applications;
+using ClientesApp.Application.Interfaces.Logs;
 using ClientesApp.Application.Interfaces.Messages;
 using MediatR;
 using Newtonsoft.Json;
@@ -23,19 +24,22 @@ namespace ClientesApp.Application.Services
         private readonly IClienteDomainService _clienteDomainService;
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
+        private readonly ILogClienteDataStore _logClienteDataStore;
 
-        public ClienteAppService(IClienteDomainService clienteDomainService, IMapper mapper, IMediator mediator, IMessagePublisher messagePublisher)
+        public ClienteAppService(IClienteDomainService clienteDomainService, IMapper mapper, IMediator mediator, IMessagePublisher messagePublisher, ILogClienteDataStore logDataStore)
         {
             _clienteDomainService = clienteDomainService;
             _mapper = mapper;
             _mediator = mediator;
             _messagePublisher = messagePublisher;
+            _logClienteDataStore = logDataStore;
         }
 
         public async Task<ClienteResponseDto> AddAsync(ClienteRequestDto request)
         {
             var cliente = _mapper.Map<Cliente>(request);
             cliente.Id = Guid.NewGuid();
+            var result = await _clienteDomainService.AddAsync(cliente);
 
             await _mediator.Send(new ClienteCommand
             {
@@ -58,7 +62,7 @@ namespace ClientesApp.Application.Services
                 MensagemCadastro = $"Olá, {cliente.Nome} sua conta foi criada com sucesso!",
             });
 
-            var result = await _clienteDomainService.AddAsync(cliente);
+            
             return _mapper.Map<ClienteResponseDto>(result);
         }
 
@@ -117,6 +121,20 @@ namespace ClientesApp.Application.Services
         public void Dispose()
         {
             _clienteDomainService.Dispose();
+        }
+
+        public async Task<LogClienteResponseDto> GetLogs(Guid id, LogClienteRequestDto request)
+        {
+            var logs = await _logClienteDataStore.GetAsync(id,request.PageNumber, request.PageSize);
+            var total = await _logClienteDataStore.GetTotalCountAsync(id);
+
+            return new LogClienteResponseDto
+            {
+                TotalCount = total,
+                PageSize = request.PageSize,
+                CurrentPage = request.PageNumber,
+                Logs = logs,
+            };
         }
     }
 

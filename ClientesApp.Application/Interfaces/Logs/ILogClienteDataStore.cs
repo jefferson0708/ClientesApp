@@ -10,5 +10,8 @@ namespace ClientesApp.Application.Interfaces.Logs
     public interface ILogClienteDataStore
     {
         Task AddSync(LogClienteModel model);
+
+        Task<List<LogClienteModel>> GetAsync(Guid clienteId, int pageNumber, int pageSize);
+        Task<int> GetTotalCountAsync(Guid clienteId);
     }
 }
