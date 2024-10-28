@@ -22,6 +22,9 @@ builder.Services.AddJwtConfig(builder.Configuration);
 
 var app = builder.Build();
 
+
+
+
 app.UseMiddleware<ValidationExceptionMiddleware>();
 app.UseMiddleware<NotFoundExceptionMiddleware>();
 app.UseSwaggerConfig();
